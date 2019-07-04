@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EWERS</string>
+    <string name="name">EARLY WARNING &amp; \nEARLY RESPONSE SYSTEM</string>
+
+
+    <string name="s_lang">SELECT LANGUAGE</string>
+    <string name="p_no">PHONE NUMBER</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome">WELCOME</string>
+
+</resources>
