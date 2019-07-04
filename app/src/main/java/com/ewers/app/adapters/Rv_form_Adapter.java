@@ -49,8 +49,7 @@ public class Rv_form_Adapter  extends RecyclerView.Adapter<Rv_form_Adapter.ViewH
 
         if (i==0){
             holder.rl_main.setBackground(context.getResources().getDrawable(R.drawable.ic_group_47));
-            holder.name_tv.setTextColor(context.getResources().getColor(R.color.white));
-            holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.white));
+            holder.name_tv.setTextColor(context.getResources().getColor(R.color.white));            holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.white));
         }else{
             holder.rl_main.setBackground(context.getResources().getDrawable(R.drawable.ic_group_7));
             holder.name_tv.setTextColor(context.getResources().getColor(R.color.grey));
