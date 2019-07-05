@@ -1,6 +1,7 @@
 package com.ewers.app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.ewers.app.R;
 import com.ewers.app.screens.Dashboard;
+import com.ewers.app.screens.DashboardOne;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +27,32 @@ public class Rv_form_Adapter  extends RecyclerView.Adapter<Rv_form_Adapter.ViewH
 
     List<Album> albums_arr;
     Context context;
+    ArrayList<Boolean> booleansarr;
+    String selected = "";
+    Album album;
 
     public Rv_form_Adapter(Context context,List<Album> albums_arr) {
         this.context = context;
         this.albums_arr = albums_arr;
 
+        setBooleanValue();
     }
+
+    public void setBooleanValue(){
+
+        booleansarr = new ArrayList<>();
+        for(int i = 0 ; i<albums_arr.size(); i++ ){
+            if(i == 0){
+                booleansarr.add(true);
+
+            }else {
+                booleansarr.add(false);
+            }
+
+        }
+
+    }
+
 
     @NonNull
     @Override
@@ -45,20 +67,44 @@ public class Rv_form_Adapter  extends RecyclerView.Adapter<Rv_form_Adapter.ViewH
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        if (i==0){
+        if (booleansarr.get(position)){
             holder.rl_main.setBackground(context.getResources().getDrawable(R.drawable.ic_group_47));
-            holder.name_tv.setTextColor(context.getResources().getColor(R.color.white));            holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.white));
+            holder.name_tv.setTextColor(context.getResources().getColor(R.color.white));
+            holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.white));
+            selected = "yes";
         }else{
             holder.rl_main.setBackground(context.getResources().getDrawable(R.drawable.ic_group_7));
             holder.name_tv.setTextColor(context.getResources().getColor(R.color.grey));
             holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.grey));
+            selected = "no";
 
         }
-        Album album = albums_arr.get(i);
+
+        album = albums_arr.get(position);
         holder.name_tv.setText(album.getName());
-       holder.sl_no_tv.setText( String.valueOf(album.getSerial_no()));
+        holder.sl_no_tv.setText( String.valueOf(album.getSerial_no()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setSelectedData(position,true);
+
+                holder.rl_main.setBackground(context.getResources().getDrawable(R.drawable.ic_group_47));
+                holder.name_tv.setTextColor(context.getResources().getColor(R.color.white));
+                holder.sl_no_tv.setTextColor(context.getResources().getColor(R.color.white));
+
+                album = albums_arr.get(position);
+
+                Intent intent = new Intent(context, DashboardOne.class);
+                intent.putExtra("name",album.getName());
+                context.startActivity(intent);
+
+
+            }
+        });
+
 
 
 
@@ -82,6 +128,24 @@ public class Rv_form_Adapter  extends RecyclerView.Adapter<Rv_form_Adapter.ViewH
 
         }
 
+    }
+
+    public void setSelectedData(int position, boolean boo){
+        booleansarr.clear();
+        setBooleanonClick();
+        booleansarr.set(position, boo);
+        notifyDataSetChanged();
+
+
+
+    }
+
+    public void setBooleanonClick(){
+        booleansarr = new ArrayList<>();
+        for(int i = 0 ; i<albums_arr.size(); i++ ){
+
+            booleansarr.add(false);
+        }
     }
 
 

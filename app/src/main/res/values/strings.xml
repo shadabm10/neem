@@ -8,6 +8,7 @@
     <string name="password">PASSWORD</string>
     <string name="login">LOGIN</string>
     <string name="welcome">WELCOME</string>
+    <string name="success">Your form has been submitted\nsuccessfully</string>
 
 </resources>
 

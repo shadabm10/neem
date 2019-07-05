@@ -30,7 +30,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:padding="@dimen/_10sdp"
             android:orientation="vertical"
             android:background="@color/white"
@@ -46,7 +46,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
-                android:text="Incident Category"
+                android:text="Age Group"
                 android:layout_marginStart="5dp" />
 
 
@@ -64,42 +64,49 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Crime"/>
+                    android:text="0 - 12 years"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Armed attack on Community Member(s)"/>
+                    android:text="13 - 17 years"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Armed attack on Security Personal"/>
+                    android:text="18 - 25 years"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Armed attack on Security Personal"/>
+                    android:text="26 - 35 years"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Physical Assault"/>
+                    android:text="36 - 45 years"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Violent Community Dispute"/>
+                    android:text="46 - 60 years"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="above 60 years"/>
 
 
             </LinearLayout>
@@ -126,6 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
+
         <TextView
             android:id="@+id/tv_prev"
             android:layout_width="@dimen/_100sdp"
@@ -145,6 +153,7 @@
             android:background="@mipmap/group_26"
             android:layout_margin="@dimen/_10sdp"
             android:layout_alignParentEnd="true" />
+
 
 
     </RelativeLayout>
